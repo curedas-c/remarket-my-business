@@ -1,0 +1,55 @@
+#popup {
+    z-index: 1000;
+    width: 100%;
+    position: fixed;
+    bottom: 2%;
+    left: 1%;
+    right: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 .2rem;
+    animation: fade 1s ease-in-out;
+    display: none;
+    text-align: center;
+    @include font-size(6, mobile, true, true, true);
+
+    &.success {
+        .popup-message {
+            background-color: #33f7a5;
+        }
+    }
+
+    &.error {
+        .popup-message {
+            background-color: #fc3b4b;
+        }
+    }
+
+    .popup-message {
+        position: fixed;
+        bottom: 2%;
+        left: 49%;
+        transform: translateX(-50%);
+        position: relative;
+        color: white;
+        width: fit-content;
+        border-radius: .6rem;
+        padding: .2rem .3rem;
+
+        p {
+            margin: 0;
+        }
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
